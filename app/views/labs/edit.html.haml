@@ -1,3 +1,6 @@
-%h1 Edit Lab
 
-= render 'form'
+- if current_user == @lab.user
+	%h1 Edit Lab
+	= render 'form'
+	
+	

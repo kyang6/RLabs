@@ -1,7 +1,9 @@
 class LabsController < ApplicationController
 	before_action :find_lab, only: [:show, :edit, :update, :destroy] 
 	before_action :authenticate_user!, except: [:index, :show]
-
+	before_action :lab_owner, only: [:edit, :update, :destroy]
+	
+	
 	def index
 		@lab = Lab.all
 	end
@@ -28,11 +30,13 @@ class LabsController < ApplicationController
 	end
 
 	def update
+		
 		if @lab.update(lab_params)
 			redirect_to @lab
 		else
 			render 'edit'
 		end
+	
 	end
 
 	def destroy
@@ -45,6 +49,14 @@ class LabsController < ApplicationController
 
 	private
 
+
+ 	def lab_owner
+     unless @lab.user_id == current_user.id
+      flash[:notice] = 'Access denied, You are not the owner of this Lab'
+      redirect_to root_path
+     end
+    end
+
 	def lab_params
 		params.require(:lab).permit(:title, :description, :director, :req, :suggested, :year, :image, :location, :webpage, :email, :lab_capacity, :current_count, :time_commitment,
 			publications_attributes: [:id, :citation, :year, :link, :_destroy], projects_attributes: [:id, :title, :description, :_destroy])
@@ -54,4 +66,7 @@ class LabsController < ApplicationController
 	def find_lab
 		@lab = Lab.find(params[:id])
 	end
+
+	
+
 end
