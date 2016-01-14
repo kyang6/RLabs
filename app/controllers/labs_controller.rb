@@ -1,5 +1,6 @@
 class LabsController < ApplicationController
 	before_action :find_lab, only: [:show, :edit, :update, :destroy] 
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 		@lab = Lab.all
@@ -9,11 +10,11 @@ class LabsController < ApplicationController
 	end
 
 	def new
-		@lab = Lab.new
+		@lab = current_user.labs.build
 	end
 
 	def create
-		@lab = Lab.new(lab_params)
+		@lab = current_user.labs.build(lab_params)
 
 		if @lab.save 
 			redirect_to @lab, notice: "Successfully Created new Lab"

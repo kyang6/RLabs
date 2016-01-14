@@ -9,4 +9,6 @@ class Lab < ActiveRecord::Base
   	accepts_nested_attributes_for :publications, reject_if: :all_blank, allow_destroy: true
 
   	validates :title, :description, :location, :email, presence: true
+
+  	belongs_to :user
 end

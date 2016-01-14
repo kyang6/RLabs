@@ -1,0 +1,5 @@
+<p>Welcome <%= @email %>!</p>
+
+<p>Thank you for signing up as a Director, you can can confirm your account below.</p>
+
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
