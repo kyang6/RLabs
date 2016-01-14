@@ -20,6 +20,12 @@
 		.col-md-12
 			#lab_description
 				%p= @lab.description
+		.col-md-12
+			#projects
+				%h2 Active Projects
+				- @lab.projects.each do |project|
+					%h3= project.title
+					%h7= project.description
 			#publications
 				#lists
 					%h2 Publications

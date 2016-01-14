@@ -91,6 +91,13 @@ body {
 	}
 }
 
+#projects {
+	background: white;
+	@include box-shadow;
+	min-height: 100px;
+	border-radius: 5px;
+	padding: 2em 8%;
+}
 
 #lab_top {
 	margin-bottom: 50px;
