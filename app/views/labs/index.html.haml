@@ -1,0 +1,11 @@
+
+
+- @lab.each_slice(3) do |labs|
+	.row
+		- labs.each do |lab|
+			.col-md-4
+				.lab
+					.image_wrapper
+						= link_to lab do
+							= image_tag lab.image.url(:medium)
+					%h2= link_to lab.title, lab

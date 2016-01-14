@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  citation: MyText
+  year: 1
+  link: MyString
+  lab_id: 
+
+two:
+  citation: MyText
+  year: 1
+  link: MyString
+  lab_id: 

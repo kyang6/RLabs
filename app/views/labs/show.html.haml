@@ -1,0 +1,41 @@
+
+.main_content
+	#lab_top.row
+		.col-md-5
+			-if @lab.image.exists?
+				= image_tag @lab.image.url( :medium, class: "lab-image")
+		.col-md-6
+			#lab_info
+				%h1= @lab.title
+				%h3 Director: #{@lab.director}
+				
+				%h5 Location: #{@lab.location}
+				%h5 Webpage: #{@lab.webpage}
+				%h5 Email: #{@lab.email}
+				%h5 Lab Capacity: #{@lab.lab_capacity}
+				%h5 Current Members: #{@lab.current_count}
+				%h5 Expected Time Commitment:  #{@lab.time_commitment}
+
+	.row
+		.col-md-12
+			#lab_description
+				%p= @lab.description
+			#publications
+				#lists
+					%h2 Publications
+					%ol 
+						- @lab.publications.each do |publication|
+							%li= publication.citation
+							%h7= link_to publication.link, "http://#{publication.link}"
+
+
+
+	
+	
+
+
+= link_to "Back", root_path, class: "btn btn-default"
+= link_to "Edit", edit_lab_path, class: "btn btn-default"
+= link_to "Delete", lab_path, method: :delete, data: {confirm: "Are you sure you would like to delete your lab?"}, class: "btn btn-default"
+
+

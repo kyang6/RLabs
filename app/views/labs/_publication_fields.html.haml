@@ -1,0 +1,6 @@
+.form-inline.clearfix
+	.nested-fields.publication
+		= f.input :citation
+		= f.input :year
+		= f.input :link
+		= link_to_remove_association "Remove", f, class: "form-button btn btn-default"
