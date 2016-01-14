@@ -45,7 +45,7 @@ class LabsController < ApplicationController
 	private
 
 	def lab_params
-		params.require(:lab).permit(:title, :description, :director, :image, :location, :webpage, :email, :lab_capacity, :current_count, :time_commitment,
+		params.require(:lab).permit(:title, :description, :director, :req, :suggested, :year, :image, :location, :webpage, :email, :lab_capacity, :current_count, :time_commitment,
 			publications_attributes: [:id, :citation, :year, :link, :_destroy], projects_attributes: [:id, :title, :description, :_destroy])
 	end
 

@@ -14,7 +14,10 @@
 				%h5= link_to @lab.email, "mailto:#{@lab.email}"
 				%h5 Lab Capacity: #{@lab.lab_capacity}
 				%h5 Current Members: #{@lab.current_count}
-				%h5 Expected Time Commitment:  #{@lab.time_commitment}
+				%h5 Expected Time Commitment:  #{@lab.time_commitment} hrs/week 
+				%h5 Pre-requistes: #{@lab.req}
+				%h5 Suggested Courses to Take: #{@lab.suggested}
+				%h5 Year: #{@lab.year}
 
 	.row
 		.col-md-12
