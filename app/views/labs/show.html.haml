@@ -10,8 +10,8 @@
 				%h3 Director: #{@lab.director}
 				
 				%h5 Location: #{@lab.location}
-				%h5 Webpage: #{@lab.webpage}
-				%h5 Email: #{@lab.email}
+				%h5=link_to @lab.webpage, "#{@lab.webpage}" 
+				%h5= link_to @lab.email, "mailto:#{@lab.email}"
 				%h5 Lab Capacity: #{@lab.lab_capacity}
 				%h5 Current Members: #{@lab.current_count}
 				%h5 Expected Time Commitment:  #{@lab.time_commitment}
