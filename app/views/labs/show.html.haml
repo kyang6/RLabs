@@ -7,7 +7,8 @@
 		.col-md-6
 			#lab_info
 				%h1= @lab.title
-				%h3 Director: #{@lab.director}
+				%h3 Principal Investigator: #{@lab.director}
+				%h3 User ID: #{@lab.user_id}
 				
 				%h5 Location: #{@lab.location}
 				%h5=link_to @lab.webpage, "#{@lab.webpage}" 
@@ -40,8 +41,10 @@
 
 		= link_to "Back", root_path, class: "btn btn-default"
 
-		- if current_user == @lab.user
+		- if can? :update, @lab
 			= link_to "Edit", edit_lab_path, class: "btn btn-default"
+
+		- if can? :destroy, @lab
 			= link_to "Delete", lab_path, method: :delete, data: {confirm: "Are you sure you would like to delete your lab?"}, class: "btn btn-default"
 
 

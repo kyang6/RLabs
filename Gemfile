@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "cancan"
 gem 'devise', '~> 3.5', '>= 3.5.3'
 gem 'cocoon', '~> 1.2', '>= 1.2.6'
 gem 'paperclip', '~> 4.3', '>= 4.3.2'

@@ -1,7 +1,7 @@
 class LabsController < ApplicationController
 	before_action :find_lab, only: [:show, :edit, :update, :destroy] 
 	before_action :authenticate_user!, except: [:index, :show]
-	before_action :lab_owner, only: [:edit, :update, :destroy]
+	
 	
 	
 	def index
@@ -16,7 +16,9 @@ class LabsController < ApplicationController
 	end
 
 	def create
-		@lab = current_user.labs.build(lab_params)
+		@user = current_user
+		@lab = @user.labs.build(lab_params)
+		
 
 		if @lab.save 
 			redirect_to @lab, notice: "Successfully Created new Lab"
@@ -27,6 +29,12 @@ class LabsController < ApplicationController
 	end
 
 	def edit
+		if can? :update, @lab
+		else
+			redirect_to root_path, notice: "You do not have permission to Update this Lab"
+		end
+
+		
 	end
 
 	def update
@@ -40,8 +48,13 @@ class LabsController < ApplicationController
 	end
 
 	def destroy
-		@lab.destroy
-		redirect_to root_path, notice: "Successfully Deleted Lab"
+		if can? :destroy, @lab
+			@lab.destroy
+			redirect_to root_path, notice: "Successfully Deleted Lab"
+		else
+			redirect_to root_path, notice: "You do not have permission to Update this Lab"
+		end
+
 	end
 
 	
@@ -50,12 +63,6 @@ class LabsController < ApplicationController
 	private
 
 
- 	def lab_owner
-     unless @lab.user_id == current_user.id
-      flash[:notice] = 'Access denied, You are not the owner of this Lab'
-      redirect_to root_path
-     end
-    end
 
 	def lab_params
 		params.require(:lab).permit(:title, :description, :director, :req, :suggested, :year, :image, :location, :webpage, :email, :lab_capacity, :current_count, :time_commitment,
