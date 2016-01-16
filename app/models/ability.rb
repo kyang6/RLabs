@@ -6,14 +6,14 @@ class Ability
 
 
     if user.admin?
-
+        can :manage, :all
 
     else
 
         can :update, Lab do |lab|
             lab.user == user
         end
-        
+
         can :destroy, Lab do |lab|
             lab.user == user
         end
