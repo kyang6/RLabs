@@ -41,10 +41,12 @@
 
 		= link_to "Back", root_path, class: "btn btn-default"
 
-		- if can? :update, @lab
-			= link_to "Edit", edit_lab_path, class: "btn btn-default"
+		-if current_user
 
-		- if can? :destroy, @lab
-			= link_to "Delete", lab_path, method: :delete, data: {confirm: "Are you sure you would like to delete your lab?"}, class: "btn btn-default"
+			- if can? :update, @lab
+				= link_to "Edit", edit_lab_path, class: "btn btn-default"
+
+			- if can? :destroy, @lab
+				= link_to "Delete", lab_path, method: :delete, data: {confirm: "Are you sure you would like to delete your lab?"}, class: "btn btn-default"
 
 

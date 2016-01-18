@@ -5,7 +5,7 @@ class Ability
 
 
 
-    if user.admin?
+    if user.admin? 
         can :manage, :all
 
     else
