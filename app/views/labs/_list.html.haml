@@ -1,0 +1,42 @@
+- unless smart_listing.empty?
+  %list.body    
+    %table.table.labs
+      %thead
+        -# Second argument of sortable is sorted attribute name
+        %th.col-md-5= smart_listing.sortable "Title", "title"
+        %th.col-md-3= "Requirements"
+        %th.col-md-2= smart_listing.sortable "Open Positions", "lab_capacity"
+        %th.col-md-1= "Year"
+        
+        
+      %tbody
+        - smart_listing.collection.each do |lab|
+          %tr.main
+            %td.title{rowspan: 2}= link_to lab.title, lab 
+            %tr.sub
+              %td= lab.req
+              -if lab.lab_capacity == 0
+                %td No positions
+              -else  
+                %td= lab.lab_capacity 
+              %td= lab.year
+            %td= lab.director
+
+      
+  = smart_listing.paginate
+  //= smart_listing.pagination_per_page_links
+- else
+  %body
+    %p.warning There are no labs that match the criteria given
+/ .lablist
+/ - unless smart_listing.empty?
+  
+/   .panel-group#accordion
+/     - smart_listing.collection.each do |lab|
+/       %tr
+/         %td= lab.title
+/         %td= lab.email
+/   = smart_listing.paginate
+/   = smart_listing.pagination_per_page_links
+/ - else
+/ %p.alert.alert-info No records!

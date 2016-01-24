@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+
+gem "smart_listing"
 gem 'rails_admin'
 gem 'cancancan', '~> 1.10'
 gem 'devise', '~> 3.5', '>= 3.5.3'

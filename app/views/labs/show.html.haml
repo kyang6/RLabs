@@ -1,37 +1,49 @@
+%h1= @lab.title
 
 .main_content
 	#lab_top.row
-		.col-md-5
-			-if @lab.image.exists?
-				= image_tag @lab.image.url( :medium, class: "lab-image")
-		.col-md-6
+		.col-md-4
 			#lab_info
-				%h1= @lab.title
-				%h3 Principal Investigator: #{@lab.director}
-				%h3 User ID: #{@lab.user_id}
-				
-				%h5 Location: #{@lab.location}
-				%h5=link_to @lab.webpage, "#{@lab.webpage}" 
-				%h5= link_to @lab.email, "mailto:#{@lab.email}"
-				%h5 Lab Capacity: #{@lab.lab_capacity}
-				%h5 Current Members: #{@lab.current_count}
-				%h5 Expected Time Commitment:  #{@lab.time_commitment} hrs/week 
-				%h5 Pre-requistes: #{@lab.req}
-				%h5 Suggested Courses to Take: #{@lab.suggested}
-				%h5 Year: #{@lab.year}
-
-	.row
-		.col-md-12
+				#lab_details
+					%h2.subhead-center Details
+					%h5 
+						%b Director: 
+						#{@lab.director}
+					%h5 
+						%b Lab Category: 
+						#{@lab.category}
+					%h5 
+						%b Location: 
+						#{@lab.location}
+					%h5 
+						%b Available Positions: 
+						#{@lab.lab_capacity}
+					%h5 
+						%b Expected Time Commitment:  
+						#{@lab.time_commitment} hrs/week 
+					%h5 
+						%b Pre-requistes: 
+						#{@lab.req}
+					%h5 
+						%b Suggested Courses to Take: 
+						#{@lab.suggested}
+					%h5 
+						%b Year: 
+						#{@lab.year}
+					%h5=link_to "Lab Webpage", "#{@lab.webpage}" 
+					%h5= link_to @lab.email, "mailto:#{@lab.email}"
+		.col-md-8
 			#lab_description
+				%h3.title Description
 				%p= @lab.description
 			#projects
-				%h2 Active Projects
+				%h3.title Active Projects
 				- @lab.projects.each do |project|
 					%h3= project.title
 					%h7= project.description
 			#publications
 				#lists
-					%h2 Publications
+					%h3.title Publications
 					%ol 
 						- @lab.publications.each do |publication|
 							%li= publication.citation

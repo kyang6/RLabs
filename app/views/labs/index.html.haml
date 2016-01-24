@@ -1,11 +1,96 @@
+%h1 Find a Lab
+
+= smart_listing_controls_for(:labs, {class: "form-inline text-left"}) do
+
+	.form-group.filter.input-append
+		= text_field_tag :filter, '', class: "search form-control",
+		placeholder: "Keywords", autocomplete: :off
+	
+	
+
+	.btn-group.first{"data-toggle" => "buttons"}
+		%label.btn.btn-default.btn-outline
+			%input{:autocomplete => "off", :type => "checkbox"}
+			= hidden_field_tag :with_lab_capacity, "0"
+			= check_box_tag :with_lab_capacity
+			= "Open Positions"
+
+	.btn-group.second{"data-toggle" => "buttons"}
+		%label.btn.btn-primary.btn-outline
+			%input{:autocomplete => "off", :type => "checkbox"}
+			= hidden_field_tag :with_biology, "0"
+			= check_box_tag :with_biology
+			= "Biology"
+		%label.btn.btn-primary.btn-outline
+			%input{:autocomplete => "off", :type => "checkbox"}
+			= hidden_field_tag :with_chemistry, "0"
+			= check_box_tag :with_chemistry
+			= "Chemistry"
+		%label.btn.btn-primary.btn-outline
+			%input{:autocomplete => "off", :type => "checkbox"}
+			= hidden_field_tag :with_biochemistry, "0"
+			= check_box_tag :with_biochemistry
+			= "Biochemistry"
+		%label.btn.btn-primary.btn-outline
+			%input{:autocomplete => "off", :type => "checkbox"}
+			= hidden_field_tag :with_physics, "0"
+			= check_box_tag :with_physics
+			= "Physics"
+		%label.btn.btn-primary.btn-outline
+			%input{:autocomplete => "off", :type => "checkbox"}
+			= hidden_field_tag :with_psychology, "0"
+			= check_box_tag :with_psychology
+			= "Psychology"
+		%label.btn.btn-primary.btn-outline
+			%input{:autocomplete => "off", :type => "checkbox"}
+			= hidden_field_tag :with_sustainability, "0"
+			= check_box_tag :with_sustainability
+			= "Sustainability"
+		%label.btn.btn-primary.btn-outline
+			%input{:autocomplete => "off", :type => "checkbox"}
+			= hidden_field_tag :with_earth_and_space, "0"
+			= check_box_tag :with_earth_and_space
+			= "Earth and Space exploration"
+/ %label.btn.btn-primary
+/ 	%input{:autocomplete => "off", :type => "checkbox"}
+/ 	Checkbox 3
+
+/ .btn-group{"data-toggle" => "buttons"}
+/ 	%label.btn.btn-primary.active 
+/ 		= hidden_field_tag :with_lab_capacity, "0"
+/ 		= check_box_tag :with_lab_capacity
+/ 		= "Open Positions"
+/ 	%label.btn.btn-primary
+/ 		= hidden_field_tag :chemistry, "0"
+/ 		= check_box_tag :chemistry
+/ 		= "Chemistry"
+/ 	%label.btn.btn-primary
+/ 		= hidden_field_tag :physics, "0"
+/ 		= check_box_tag :physics
+/ 		= "Physics"
+/ 	%label.btn.btn-primary
+/ 		= hidden_field_tag :engineering, "0"
+/ 		= check_box_tag :engineering
+/ 		= "Engineering"
+/ 	%label.btn.btn-primary
+/ 		= hidden_field_tag :pyscology, "0"
+/ 		= check_box_tag :pyscology
+/ 		= "Pyscology"
 
 
-- @lab.each_slice(3) do |labs|
-	.row
-		- labs.each do |lab|
-			.col-md-4
-				.lab
-					.image_wrapper
-						= link_to lab do
-							= image_tag lab.image.url(:medium)
-					%h2= link_to lab.title, lab
+
+	
+
+= smart_listing_render(:labs)
+
+/ - @lab.each_slice(3) do |labs|
+/ 	.row
+/ 		- labs.each do |lab|
+/ 			.col-md-4
+/ 				.lab
+/ 					.image_wrapper
+/ 						= link_to lab do
+/ 							= image_tag lab.image.url(:medium)
+/ 					%h2= link_to lab.title, lab
+
+

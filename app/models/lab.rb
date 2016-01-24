@@ -14,4 +14,19 @@ class Lab < ActiveRecord::Base
   	
 
   	belongs_to :user
+
+    #Searches through all the text in title and description
+    def self.search(filter)
+      if filter
+        where('description LIKE ? OR title LIKE ?', "%#{filter}%","%#{filter}%") 
+      else
+        scoped
+      end
+    end
+
+    
+
+
+
+
 end
