@@ -1,4 +1,4 @@
-%h1= @lab.title
+%h1.title= @lab.title
 
 .main_content
 	#lab_top.row
@@ -23,10 +23,12 @@
 						#{@lab.time_commitment} hrs/week 
 					%h5 
 						%b Pre-requistes: 
-						#{@lab.req}
+						%br
+						%br #{@lab.req}
 					%h5 
 						%b Suggested Courses to Take: 
-						#{@lab.suggested}
+						%br
+						%br #{@lab.suggested}
 					%h5 
 						%b Year: 
 						#{@lab.year}
@@ -39,7 +41,7 @@
 			#projects
 				%h3.title Active Projects
 				- @lab.projects.each do |project|
-					%h3= project.title
+					%h3.subtitle= project.title
 					%h7= project.description
 			#publications
 				#lists
