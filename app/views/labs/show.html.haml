@@ -7,7 +7,7 @@
 				#lab_details
 					%h2.subhead-center Details
 					%h5 
-						%b Director: 
+						%b Principal Investigator: 
 						#{@lab.director}
 					%h5 
 						%b Lab Category: 
@@ -42,16 +42,17 @@
 				%h3.title Active Projects
 				- @lab.projects.each do |project|
 					%h3.subtitle= project.title
-					%h7= project.description
+					%p= project.description
 			#publications
 				#lists
 					%h3.title Publications
 					%ol 
 						- @lab.publications.each do |publication|
-							%li= publication.citation
+							%li.citation= publication.citation
 							%h7= link_to publication.link, "http://#{publication.link}"
 
-	.row
+	.col-md-4	
+		.row
 
 		= link_to "Back", root_path, class: "btn btn-default"
 

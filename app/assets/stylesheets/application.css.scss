@@ -28,10 +28,10 @@
 	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 }
 
-$green: #13897a;
-$lightBlue: #71caec;
+$titles: #006F8A;
+$lightBlue: #A85743;
 $details: 	#f4f3ee;
-$detailsTitle: #13897a;
+$detailsTitle: #006F8A;
 
 
 body {
@@ -51,28 +51,31 @@ body {
 .alert {
 	padding: 15px;
 	margin-bottom: 20px;
-	border: 1px solid transparent;
 	border-radius: 5px;
-	@include box-shadow;
-	background: white;
-	font-weight: bold;
+	background: $lightBlue;
+	font-family: 'Open Sans', sans-serif;
+	color:white;
 }
 
 .navbar {
 	margin-bottom: 50px;
-	@include box-shadow;
 	border: none;
+	background-color: $titles;
+	border-radius: 0;
 	.navbar-brand {
 		text-transform: uppercase;
 		letter-spacing: -1px;
 		font-family: 'Open Sans', sans-serif;
 		font-size: 25px;
-
 		a {
-			color: $green;
+			color: white;
 		}
 	}
+	.navbar-logins {
+		color:white;
+	}
 }
+
 
 .lab {
 
@@ -83,7 +86,7 @@ body {
 		font-weight: normal;
 		line-height: 1.5;
 		a {
-			color: $green;
+			color: $titles;
 		}
 	}
 }
@@ -95,6 +98,8 @@ body {
 	border-bottom-right-radius: 5px;
 	
 }
+
+
 
 #lab_top {
 	margin-bottom: 50px;
@@ -121,13 +126,6 @@ body {
 	list-style-type: decimal;
 }
 
-.lab_image {
-	max-width: 100%;
-	border-radius: 5px;
-	@include box-shadow;
-}
-
-
 #lab_details {
 	background-color: $details;
 	h5 {
@@ -143,13 +141,19 @@ body {
 
 		font-size: 36px;
 		font-weight: normal;
-		color: $green;
+		color: $titles;
 	}
 	.description {
 		font-family: 'Open Sans', sans-serif;
 		color: #8A8A8A;
 		font-size: 20px;
 	}
+}
+
+.lab_image {
+	max-width: 100%;
+	border-radius: 5px;
+	@include box-shadow;
 }
 
 #publications, #projects {
@@ -162,6 +166,7 @@ body {
 		}
 	}
 }
+
 
 .form-inline {
 	margin-top: 15px;
@@ -194,10 +199,14 @@ table.table.labs td {
     border-top: none;
 }
 table.table.labs tr.sub {
-    border-top: 1px solid ;
+    border-top: 1px solid #D3D3D3;
 }
 table.table.labs tr.main {
-	border-top: 1px solid;
+	border-top: 1px solid #D3D3D3;
+}
+table.table.labs tr.main td.title {
+	font-size: 12pt;
+	
 }
 
 .btn-outline {
@@ -215,6 +224,9 @@ table.table.labs tr.main {
     color: white;
 }
 
+/*
+Titles 
+*/
 h1.title {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -238,4 +250,15 @@ h3.subtitle {
 	font-family: 'Open Sans', sans-serif;
 }
 
-
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+h5 {
+	font-family: 'Open Sans', sans-serif;
+}
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+li.citation {
+	font-family: 'Open Sans', sans-serif;
+}

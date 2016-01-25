@@ -14,11 +14,11 @@
 			
 			- if user_signed_in?
 				%ul.nav.navbar-nav.navbar-right
-					%li= link_to "Sign Out", destroy_user_session_path, method: :delete
-					%li= link_to "My Lab", lab_path(current_user.id)
+					%li.nav= link_to "Sign Out", destroy_user_session_path, method: :delete
+					%li.nav= link_to "My Lab", lab_path(current_user.id)
 			- else
 				%ul.nav.navbar-nav.navbar-right
-					%li= link_to "PI Sign In", new_user_session_path
+					%li.nav= link_to "PI Sign In", new_user_session_path
 
 	.container
 		- flash.each do |name, msg|

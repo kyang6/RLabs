@@ -1,6 +1,6 @@
 - unless smart_listing.empty?
   %list.body    
-    %table.table.labs
+    %table.table.labs.table-hover.clickable-row
       %thead
         -# Second argument of sortable is sorted attribute name
         %th.col-md-5= smart_listing.sortable "Title", "title"
@@ -12,15 +12,14 @@
       %tbody
         - smart_listing.collection.each do |lab|
           %tr.main
-            %td.title{rowspan: 2}= link_to lab.title, lab 
-            %tr.sub
-              %td= lab.req
-              -if lab.lab_capacity == 0
-                %td No positions
-              -else  
-                %td= lab.lab_capacity 
-              %td= lab.year
-            %td= lab.director
+            %td.title= link_to lab.title, lab 
+            %td= lab.req
+            -if lab.lab_capacity == 0
+              %td No positions
+            -else  
+              %td= lab.lab_capacity 
+            %td= lab.year
+        
 
       
   = smart_listing.paginate
