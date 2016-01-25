@@ -11,7 +11,7 @@
         
       %tbody
         - smart_listing.collection.each do |lab|
-          %tr.main
+          %tr.main{"data-link" => lab_path(lab)}
             %td.title= link_to lab.title, lab 
             %td= lab.req
             -if lab.lab_capacity == 0

@@ -16,4 +16,6 @@
 //= require turbolinks
 //= require cocoon
 //= require smart_listing
+//= require list
 //= require_tree .
+
