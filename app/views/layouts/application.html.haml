@@ -2,8 +2,8 @@
 %html
 %head
 	%title RLabs
-	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-	= javascript_include_tag 'application', 'data-turbolinks-track' => true
+	= stylesheet_link_tag    'application', media: 'all'
+	= javascript_include_tag 'application'
 	= csrf_meta_tags
 %body
 	%nav.navbar.navbar-default
@@ -24,5 +24,10 @@
 		- flash.each do |name, msg|
 			= content_tag :div, msg, class: "alert"
 		= yield
+	
+	%footer
+		%h5.footer Site developed by Kevin Yang. Content provided by Meilin Zhu.
+
+
 
 

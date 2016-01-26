@@ -58,7 +58,8 @@ body {
 }
 
 .navbar {
-	margin-bottom: 50px;
+
+	margin-bottom: 30px;
 	border: none;
 	background-color: $titles;
 	border-radius: 0;
@@ -75,6 +76,15 @@ body {
 		color:white;
 	}
 }
+
+footer {
+  position: relative;
+  margin-top: 80px; /* negative value of footer height */
+  height: 70px;
+  clear:both;
+  padding-top:20px;
+  background-color: $titles;
+} 
 
 
 .lab {
@@ -206,7 +216,7 @@ table.table.labs tr.main {
 }
 table.table.labs tr.main td.title {
 	font-size: 12pt;
-	
+
 }
 
 .btn-outline {
@@ -256,9 +266,20 @@ h3.subtitle {
 h5 {
 	font-family: 'Open Sans', sans-serif;
 }
+h5.footer {
+	color:white;
+	font-size: 10pt;
+	text-align: center;
+}
 p {
 	font-family: 'Open Sans', sans-serif;
 }
 li.citation {
 	font-family: 'Open Sans', sans-serif;
+}
+img.category {
+	width: 35px;
+	height: 35px;
+	margin-left: 15px;
+	border-radius: 100%;
 }

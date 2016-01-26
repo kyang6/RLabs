@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require cocoon
 //= require smart_listing
 //= require list
+//= require index
+
 //= require_tree .
 

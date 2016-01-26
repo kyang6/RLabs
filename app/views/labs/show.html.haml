@@ -1,4 +1,21 @@
-%h1.title= @lab.title
+%h1.title
+
+	-if @lab.category == "Biology"
+		%img.category(src="/assets/biology.jpg")
+	-if @lab.category == "Chemistry"
+		%img.category(src="/assets/chemistry.jpg")
+	-if @lab.category == "Biochemistry"
+		%img.category(src="/assets/biochemistry.jpg")
+	-if @lab.category == "Physics"
+		%img.category(src="/assets/physics.jpg")
+	-if @lab.category == "Psychology"
+		%img.category(src="/assets/pyschology.jpg")
+	-if @lab.category == "Sustainability"
+		%img.category(src="/assets/sustainability.jpg")
+	-if @lab.category == "Earth and Space exploration"
+		%img.category(src="/assets/earth_and_space_exploration.jpg")
+	
+	=@lab.title
 
 .main_content
 	#lab_top.row

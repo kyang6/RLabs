@@ -3,6 +3,7 @@
     %table.table.labs.table-hover.clickable-row
       %thead
         -# Second argument of sortable is sorted attribute name
+        %th.col-md-1
         %th.col-md-5= smart_listing.sortable "Title", "title"
         %th.col-md-3= "Requirements"
         %th.col-md-2= smart_listing.sortable "Open Positions", "lab_capacity"
@@ -12,6 +13,22 @@
       %tbody
         - smart_listing.collection.each do |lab|
           %tr.main{"data-link" => lab_path(lab)}
+            %td
+              -if lab.category == "Biology"
+                %img.category(src="/assets/biology.jpg")
+              -if lab.category == "Chemistry"
+                %img.category(src="/assets/chemistry.jpg")
+              -if lab.category == "Biochemistry"
+                %img.category(src="/assets/biochemistry.jpg")
+              -if lab.category == "Physics"
+                %img.category(src="/assets/physics.jpg")
+              -if lab.category == "Psychology"
+                %img.category(src="/assets/pyschology.jpg")
+              -if lab.category == "Sustainability"
+                %img.category(src="/assets/sustainability.jpg")
+              -if lab.category == "Earth and Space exploration"
+                %img.category(src="/assets/earth_and_space_exploration.jpg")
+
             %td.title= link_to lab.title, lab 
             %td= lab.req
             -if lab.lab_capacity == 0

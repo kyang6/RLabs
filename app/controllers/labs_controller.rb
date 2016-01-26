@@ -10,8 +10,11 @@ class LabsController < ApplicationController
 		labs_scope = Lab.all
 		labs_scope = labs_scope.search(params[:filter]) if params[:filter]
 		labs_scope = labs_scope.where("lab_capacity != '0'") if params[:with_lab_capacity] == "1"
-
+		
 		labs_scope = filter_category(labs_scope)
+	
+
+		
 		
 		@lab = smart_listing_create :labs, labs_scope, partial: "labs/list"
 	end
@@ -64,43 +67,56 @@ class LabsController < ApplicationController
 		end
 
 	end
-
 	
+
 	def filter_category(labs_scope)
-		bio = "Biology"
-		chem = "Chemistry"
-		biochem = "Biochemistry"
-		phy = "Physics"
-		psy = "Psychology"
-		sus = "Sustainability"
-		ese = "Earth and Space exploration"
-		if params[:with_biology] == "1" 
-			bio = "" 
-		end
-		if params[:with_chemistry] == "1"
-			chem = "" 
-		end
-		if params[:with_biochemistry] == "1"
+			# When each parameter is clicked, then the variable will be changed
+			# to the parameter name, and will be searched
+
+			bio = ""
+			chem = ""
 			biochem = ""
-		end
-		if params[:with_physics] == "1"
 			phy = ""
-		end
-		if params[:with_psychology] == "1"
 			psy = ""
-		end
-		if params[:with_sustainability] == "1"
 			sus = ""
-		end  
-		if params[:with_earth_and_space] == "1"
 			ese = ""
-		end 
 
-		labs_scope.where("category=? OR category=? OR category=? OR 
-			category=? OR category=? OR category=? OR category=?",bio,chem,biochem,phy,
-			psy, sus, ese)
+
+			if params[:all] == "1"
+				bio = "Biology"
+				chem = "Chemistry"
+				biochem = "Biochemistry"
+				phy = "Physics"
+				psy = "Psychology"
+				sus = "Sustainability"
+				ese = "Earth and Space exploration"
+			end
+			
+			if params[:with_biology] == "1"
+				bio = "Biology"
+			end
+			if params[:with_chemistry] == "1"
+				chem = "Chemistry" 
+			end
+			if params[:with_biochemistry] == "1"
+				biochem = "Biochemistry"
+			end
+			if params[:with_physics] == "1"
+				phy = "Physics"
+			end
+			if params[:with_psychology] == "1"
+				psy = "Psychology"
+			end
+			if params[:with_sustainability] == "1"
+				sus = "Sustainability"
+			end  
+			if params[:with_earth_and_space] == "1"
+				ese = "Earth and Space exploration"
+			end 
+			labs_scope.where("category=? OR category=? OR category=? OR 
+				category=? OR category=? OR category=? OR category=?",bio,chem,biochem,phy,
+				psy, sus, ese)	
 	end
-
 
 	private
 
