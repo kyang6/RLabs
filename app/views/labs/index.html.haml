@@ -19,9 +19,10 @@
 		
 		%label.btn.btn-primary.btn-outline
 			%input{:autocomplete => "off", :type => "checkbox"}
-			= hidden_field_tag :all, "0"
-			= check_box_tag :all
-			= "All"
+			#all
+				= hidden_field_tag :all, "0"
+				= check_box_tag :all
+				= "All"
 		
 		%label.btn.btn-primary.btn-outline
 			%input{:autocomplete => "off", :type => "checkbox"}
