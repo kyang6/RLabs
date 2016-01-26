@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160126062759) do
+ActiveRecord::Schema.define(version: 20160126071247) do
 
   create_table "labs", force: :cascade do |t|
     t.string   "title"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20160126062759) do
     t.string   "webpage"
     t.string   "email"
     t.integer  "lab_capacity"
-    t.integer  "time_commitment"
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
@@ -29,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160126062759) do
     t.string   "suggested"
     t.string   "year"
     t.string   "category"
+    t.string   "time_commitment"
   end
 
   create_table "projects", force: :cascade do |t|
