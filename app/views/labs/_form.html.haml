@@ -11,7 +11,7 @@
 		.row
 			.col-md-3
 				= f.hidden_field :user_id , value: current_user.id
-				= f.input :lab_capacity, input_html: { class: 'form-control'}, label: "Available Positions"
+				= f.input :lab_capacity, collection: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], label: "Available Positions"
 				= f.input :time_commitment, input_html: { class: 'form-control'}
 				= f.input :director, input_html: { class: 'form-control'}
 				= f.input :email, input_html: { class: 'form-control'}
