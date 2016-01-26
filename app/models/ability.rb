@@ -8,7 +8,11 @@ class Ability
 
         can :manage, :all
 
+        can :import, [User, Lab, Project, Publication]
+
     else
+
+
 
         can :update, Lab do |lab|
             lab.user == user
