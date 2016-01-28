@@ -42,8 +42,9 @@
   = smart_listing.paginate
   //= smart_listing.pagination_per_page_links
 - else
-  %body
-    %p.warning There are no labs that match the criteria given
+  #warning_labs.col-center
+    %h3.text-center 
+      Please select a category.
 / .lablist
 / - unless smart_listing.empty?
   

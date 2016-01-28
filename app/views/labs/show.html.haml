@@ -62,11 +62,22 @@
 					%p= project.description
 			#publications
 				#lists
-					%h3.title Publications
+					%h3.title Recent Publications
 					%ol 
 						- @lab.publications.each do |publication|
-							%li.citation= publication.citation
-							%h7= link_to publication.link, "http://#{publication.link}"
+							- if publication.year == 2015 
+								%h3 2015
+								%li.citation= publication.citation
+								%h7= link_to "Publication Link", "http://#{publication.link}" if publication.link?
+							- if publication.year == 2014
+								%h3 2014
+								%li.citation= publication.citation
+								%h7= link_to "Publication Link", "http://#{publication.link}" if publication.link?
+							- if publication.year == 2013
+								%h3 2013
+								%li.citation= publication.citation
+								%h7= link_to "Publication Link", "http://#{publication.link}" if publication.link?
+
 
 	.col-md-4	
 		.row

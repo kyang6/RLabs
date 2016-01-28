@@ -15,7 +15,5 @@
 //= require bootstrap-sprockets
 //= require cocoon
 //= require smart_listing
-//= require list
-//= require index
 //= require_tree .
 

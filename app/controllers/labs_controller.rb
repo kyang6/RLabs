@@ -82,15 +82,15 @@ class LabsController < ApplicationController
 			ese = ""
 
 
-			if params[:all] == "1"
-				bio = "Biology"
-				chem = "Chemistry"
-				biochem = "Biochemistry"
-				phy = "Physics"
-				psy = "Psychology"
-				sus = "Sustainability"
-				ese = "Earth and Space exploration"
-			end
+			# if params[:all] == "1"
+			# 	bio = "Biology"
+			# 	chem = "Chemistry"
+			# 	biochem = "Biochemistry"
+			# 	phy = "Physics"
+			# 	psy = "Psychology"
+			# 	sus = "Sustainability"
+			# 	ese = "Earth and Space exploration"
+			# end
 			
 			if params[:with_biology] == "1"
 				bio = "Biology"

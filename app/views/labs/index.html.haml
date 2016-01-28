@@ -16,49 +16,54 @@
 			= "Open Positions"
 
 	.btn-group.second{"data-toggle" => "buttons"}
-		
-		%label.btn.btn-primary.btn-outline
+		/ %label.btn.btn-primary.btn-outline.all
+		/ 	%input{:autocomplete => "off", :type => "checkbox"}
+		/ 	#all
+		/ 		= hidden_field_tag :all, "0"
+		/ 		= check_box_tag :all
+		/ 		= "All"
+		%label.btn.btn-primary.btn-outline.biochem
 			%input{:autocomplete => "off", :type => "checkbox"}
-			#all
-				= hidden_field_tag :all, "0"
-				= check_box_tag :all
-				= "All"
-		
-		%label.btn.btn-primary.btn-outline
+			#biochem
+				= hidden_field_tag :with_biochemistry, "0"
+				= check_box_tag :with_biochemistry
+				= "Biochemistry"
+		%label.btn.btn-primary.btn-outline.bio
 			%input{:autocomplete => "off", :type => "checkbox"}
-			= hidden_field_tag :with_biochemistry, "0"
-			= check_box_tag :with_biochemistry
-			= "Biochemistry"
-		%label.btn.btn-primary.btn-outline
+			#bio
+				= hidden_field_tag :with_biology, "0"
+				= check_box_tag :with_biology
+				= "Biology"
+		%label.btn.btn-primary.btn-outline.chem
 			%input{:autocomplete => "off", :type => "checkbox"}
-			= hidden_field_tag :with_biology, "0"
-			= check_box_tag :with_biology
-			= "Biology"
-		%label.btn.btn-primary.btn-outline
+			#chem
+				= hidden_field_tag :with_chemistry, "0"
+				= check_box_tag :with_chemistry
+				= "Chemistry"
+		%label.btn.btn-primary.btn-outline.ese
 			%input{:autocomplete => "off", :type => "checkbox"}
-			= hidden_field_tag :with_chemistry, "0"
-			= check_box_tag :with_chemistry
-			= "Chemistry"
-		%label.btn.btn-primary.btn-outline
+			#ese
+				= hidden_field_tag :with_earth_and_space, "0"
+				= check_box_tag :with_earth_and_space
+				= "Earth and Space Exploration"
+		%label.btn.btn-primary.btn-outline.phy
 			%input{:autocomplete => "off", :type => "checkbox"}
-			= hidden_field_tag :with_earth_and_space, "0"
-			= check_box_tag :with_earth_and_space
-			= "Earth and Space Exploration"
-		%label.btn.btn-primary.btn-outline
+			#phy
+				= hidden_field_tag :with_physics, "0"
+				= check_box_tag :with_physics
+				= "Physics"
+		%label.btn.btn-primary.btn-outline.psy
 			%input{:autocomplete => "off", :type => "checkbox"}
-			= hidden_field_tag :with_physics, "0"
-			= check_box_tag :with_physics
-			= "Physics"
-		%label.btn.btn-primary.btn-outline
+			#psy
+				= hidden_field_tag :with_psychology, "0"
+				= check_box_tag :with_psychology
+				= "Psychology"
+		%label.btn.btn-primary.btn-outline.sus
 			%input{:autocomplete => "off", :type => "checkbox"}
-			= hidden_field_tag :with_psychology, "0"
-			= check_box_tag :with_psychology
-			= "Psychology"
-		%label.btn.btn-primary.btn-outline
-			%input{:autocomplete => "off", :type => "checkbox"}
-			= hidden_field_tag :with_sustainability, "0"
-			= check_box_tag :with_sustainability
-			= "Sustainability"
+			#sus
+				= hidden_field_tag :with_sustainability, "0"
+				= check_box_tag :with_sustainability
+				= "Sustainability"
 		
 / %label.btn.btn-primary
 / 	%input{:autocomplete => "off", :type => "checkbox"}
