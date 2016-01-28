@@ -17,7 +17,7 @@ class Lab < ActiveRecord::Base
     #Searches through all the text in title and description
     def self.search(filter)
       if filter
-        where('description LIKE ? OR title LIKE ? OR director LIKE?', "%#{filter}%","%#{filter}%","%#{filter}%") 
+        where('LOWER(description) LIKE ? OR LOWER(title) LIKE ? OR LOWER(director) LIKE?', "%#{filter.downcase}%","%#{filter.downcase}%","%#{filter.downcase}%") 
       else
         scoped
       end
