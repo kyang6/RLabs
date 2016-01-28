@@ -14,9 +14,7 @@ class LabsController < ApplicationController
 		labs_scope = filter_category(labs_scope)
 	
 
-		
-		
-		@lab = smart_listing_create :labs, labs_scope, partial: "labs/list"
+		smart_listing_create :labs, labs_scope, partial: "labs/list"
 	end
 
 	def show
@@ -81,16 +79,6 @@ class LabsController < ApplicationController
 			sus = ""
 			ese = ""
 
-
-			# if params[:all] == "1"
-			# 	bio = "Biology"
-			# 	chem = "Chemistry"
-			# 	biochem = "Biochemistry"
-			# 	phy = "Physics"
-			# 	psy = "Psychology"
-			# 	sus = "Sustainability"
-			# 	ese = "Earth and Space exploration"
-			# end
 			
 			if params[:with_biology] == "1"
 				bio = "Biology"
