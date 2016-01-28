@@ -1,0 +1,6 @@
+%p= link_to "Change Your Password", edit_user_registration_path, class: "btn btn-primary" 
+%h1 Update Your Lab
+- @lab.each do |lab|
+	%h3= link_to lab.title, edit_lab_path, class: "btn btn-default" 
+
+

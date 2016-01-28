@@ -9,7 +9,7 @@ class Lab < ActiveRecord::Base
   	has_many :publications
   	accepts_nested_attributes_for :publications, reject_if: :all_blank, allow_destroy: true
 
-  	validates :title, :description, :location, :email, presence: true
+  	validates :title, :location, :webpage, :lab_capacity, :director, :req, :suggested, :year, :category, :description, :email, presence: true
   	
 
   	belongs_to :user
