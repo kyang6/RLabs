@@ -69,12 +69,16 @@ body {
 		font-family: 'Open Sans', sans-serif;
 		font-size: 25px;
 		a {
-			color: white;
+			color: $titles;
 		}
 	}
 	.navbar-logins {
 		color:white;
 	}
+}
+.navbar-default .navbar-toggle {
+    border-color: #ddd;
+    margin-top: 8px;
 }
 
 footer {
@@ -101,6 +105,14 @@ footer {
 	}
 }
 
+#tab {
+	box-shadow: 5px 0px 10px 0 rgba(0, 0, 0, 0.2);
+    background: #FFF;
+    float: left;
+    width: 220px;
+    position: relative;
+    z-index: 1;
+}
 #projects {
 	padding: 0% 2%;
 	min-height: 100px;

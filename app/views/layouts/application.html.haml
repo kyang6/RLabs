@@ -6,19 +6,27 @@
 	= javascript_include_tag 'application'
 	= csrf_meta_tags
 %body
-	%nav.navbar.navbar-default
-		.container
+	%nav.navbar.navbar-default{role: "navigation"}
+		#tab
 			.navbar-brand 
-				= link_to "RLABS", root_path
+				= link_to "Research Labs", root_path
+		.navbar-header
+			%button.navbar-toggle{"data-target" => "#mobile-menu", "data-toggle" => "collapse", :type => "button"}
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+		
+		#mobile-menu.collapse.navbar-collapse
 
-			
-			- if user_signed_in?
-				%ul.nav.navbar-nav.navbar-right
-					%li.nav= link_to "Sign Out", destroy_user_session_path, method: :delete
-					%li.nav= link_to "My Profile", current_user
-			- else
-				%ul.nav.navbar-nav.navbar-right
-					%li.nav= link_to "PI Sign In", new_user_session_path
+			.container-fluid
+				
+				- if user_signed_in?
+					%ul.nav.navbar-nav.navbar-right
+						%li.nav= link_to "Sign Out", destroy_user_session_path, method: :delete
+						%li.nav= link_to "My Profile", current_user
+				- else
+					%ul.nav.navbar-nav.navbar-right
+						%li.nav= link_to "PI Sign In", new_user_session_path
 
 	.container
 		- flash.each do |name, msg|
