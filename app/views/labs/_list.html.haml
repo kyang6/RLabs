@@ -29,7 +29,7 @@
               -if lab.category == "Earth and Space exploration"
                 %img.category(src="/assets/earth_and_space_exploration.jpg")
 
-            %td.title= link_to lab.title, lab 
+            %td.title= link_to lab.title, lab, target: "_blank"
             %td= lab.req
             -if lab.lab_capacity == 0
               %td No positions
