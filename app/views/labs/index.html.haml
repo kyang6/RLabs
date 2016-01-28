@@ -58,47 +58,10 @@
 				= hidden_field_tag :with_sustainability, "0"
 				= check_box_tag :with_sustainability
 				= "Sustainability"
-		
-/ %label.btn.btn-primary
-/ 	%input{:autocomplete => "off", :type => "checkbox"}
-/ 	Checkbox 3
-
-/ .btn-group{"data-toggle" => "buttons"}
-/ 	%label.btn.btn-primary.active 
-/ 		= hidden_field_tag :with_lab_capacity, "0"
-/ 		= check_box_tag :with_lab_capacity
-/ 		= "Open Positions"
-/ 	%label.btn.btn-primary
-/ 		= hidden_field_tag :chemistry, "0"
-/ 		= check_box_tag :chemistry
-/ 		= "Chemistry"
-/ 	%label.btn.btn-primary
-/ 		= hidden_field_tag :physics, "0"
-/ 		= check_box_tag :physics
-/ 		= "Physics"
-/ 	%label.btn.btn-primary
-/ 		= hidden_field_tag :engineering, "0"
-/ 		= check_box_tag :engineering
-/ 		= "Engineering"
-/ 	%label.btn.btn-primary
-/ 		= hidden_field_tag :pyscology, "0"
-/ 		= check_box_tag :pyscology
-/ 		= "Pyscology"
-
-
-
+	
 	
 
 = smart_listing_render(:labs)
 
-/ - @lab.each_slice(3) do |labs|
-/ 	.row
-/ 		- labs.each do |lab|
-/ 			.col-md-4
-/ 				.lab
-/ 					.image_wrapper
-/ 						= link_to lab do
-/ 							= image_tag lab.image.url(:medium)
-/ 					%h2= link_to lab.title, lab
 
 
