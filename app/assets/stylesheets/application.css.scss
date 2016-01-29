@@ -64,6 +64,7 @@ body {
 	border: none;
 	background-color: $titles;
 	border-radius: 0;
+
 	.navbar-brand {
 		text-transform: uppercase;
 		letter-spacing: -1px;
@@ -81,6 +82,7 @@ body {
     border-color: #ddd;
     margin-top: 8px;
 }
+
 
 footer {
   position: relative;
@@ -295,6 +297,14 @@ h5.footer {
 p {
 	font-family: $font;
 }
+p.navbar-logo {
+	font-family: $font;
+	font-size: 18.3pt;
+	color: white;
+	margin-left: 30px;
+	margin-top: 6.4px;
+}
+
 li.citation {
 	font-family: $font;
 }
@@ -304,6 +314,7 @@ li.nav {
 ul.publications {
 	list-style-type: none;
 }
+
 img.category {
 	width: 35px;
 	height: 35px;

@@ -10,11 +10,14 @@
 		#tab
 			.navbar-brand 
 				= link_to "Research Labs", root_path
+		
 		.navbar-header
 			%button.navbar-toggle{"data-target" => "#mobile-menu", "data-toggle" => "collapse", :type => "button"}
 				%span.icon-bar
 				%span.icon-bar
 				%span.icon-bar
+			-# to change which school is currently selected 
+			%p.navbar-logo ASU 
 		
 		#mobile-menu.collapse.navbar-collapse
 
