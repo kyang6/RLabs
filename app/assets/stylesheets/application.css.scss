@@ -116,11 +116,18 @@ footer {
     position: relative;
     z-index: 1;
 }
+#publications {
+	padding: 0% 2%;
+	min-height: 30px;
+	border-radius: 5px;
+	
+}
 #projects {
 	padding: 0% 2%;
-	min-height: 100px;
+	min-height: 30px;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	width: 65% !important;
 	
 }
 
@@ -142,12 +149,7 @@ footer {
 #lab_info {
 	padding: 3% 3%;
 }
-#publications {
-	padding: 0% 2%;
-	min-height: 30px;
-	border-radius: 5px;
-	
-}
+
 
 #lab_info, #publications, #lists {
 	list-style-type: decimal;
@@ -198,6 +200,7 @@ footer {
 .form-inline {
 	margin-top: 15px;
 }
+
 .form-input {
 	width: 65% !important;
 	float: left;

@@ -1,6 +1,10 @@
-.form-inline.clearfix
+.form-inline
 	.nested-fields.publication
-		= f.input :citation
-		= f.input :year
-		= f.input :link
+		= f.input :citation, input_html: { style: 'width: 100%', class: 'form-control'}
+		%br/
+		= f.input :link, input_html: { style: 'width: 50%', class: 'form-control'}
+		= f.input :year, input_html: { style: 'width: 10%', class: 'form-control'}
+		%br/
 		= link_to_remove_association "Remove", f, class: "form-button btn btn-default"
+		%br/
+		%br/

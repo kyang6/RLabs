@@ -20,14 +20,15 @@
 			.col-md-9
 				= f.input :title, input_html: { class: 'form-control'}
 				= f.input :description, input_html: { class: 'form-control'}
-				= f.input :req, input_html: { class: 'form-control'}, label: "Prerequisite Courses"
+				= f.input :req, input_html: {maxlength: 200,  class: 'form-control'}, label: "Brief Description (200 characters)"
 				= f.input :suggested, input_html: { class: 'form-control'}, label: "Suggested Courses"
 				= f.input :location, input_html: { class: 'form-control'}
 				= f.input :webpage, input_html: { class: 'form-control'}
-				
+
+			
+			
 		.row
-			.col-md-12
-				
+			.col
 				%h3 Active Projects
 				#projects
 					= f.simple_fields_for :projects do |project|

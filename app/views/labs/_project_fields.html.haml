@@ -1,5 +1,9 @@
-.form-inline.clearfix
+.form
 	.nested-fields.projects
-		= f.input :title
-		= f.input :description
+		%br/
+		= f.input :title, input_html: {style: 'width: 50%', class: 'form-control'}
+		= f.input :description, input_html: {style: 'width: 100%', class: 'form-control'}
+		%br/
 		= link_to_remove_association "Remove", f, class: "form-button btn btn-default"
+		%br/
+		%br/
