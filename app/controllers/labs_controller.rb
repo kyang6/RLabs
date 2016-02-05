@@ -8,12 +8,13 @@ class LabsController < ApplicationController
 	
 	def index
 		labs_scope = Lab.all
+		# searches with search function found in the lab model
 		labs_scope = labs_scope.search(params[:filter]) if params[:filter]
+		# filters labs based on lab capacity
 		labs_scope = labs_scope.where("lab_capacity != '0'") if params[:with_lab_capacity] == "1"
-		
+		# calls the private filter_category method to filter based on categories
 		labs_scope = filter_category(labs_scope)
 	
-
 		smart_listing_create :labs, labs_scope, partial: "labs/list"
 	end
 
@@ -69,7 +70,7 @@ class LabsController < ApplicationController
 
 	def filter_category(labs_scope)
 			# When each parameter is clicked, then the variable will be changed
-			# to the parameter name, and will be searched
+			# to the parameter name and will be added to the scope
 
 			bio = ""
 			chem = ""

@@ -5,16 +5,15 @@
 	.form-group.filter.input-append
 		= text_field_tag :filter, '', class: "search form-control",
 		placeholder: "Keywords", autocomplete: :off
-	
-	
-
+	- #Checkbox for open positions
 	.btn-group.first{"data-toggle" => "buttons"}
 		%label.btn.btn-default.btn-outline
 			%input{:autocomplete => "off", :type => "checkbox"}
 			= hidden_field_tag :with_lab_capacity, "0"
 			= check_box_tag :with_lab_capacity
 			= "Open Positions"
-
+			
+	- #Checkbox family for categories
 	.btn-group.second{"data-toggle" => "buttons"}
 		%label.btn.btn-primary.btn-outline.biochem
 			%input{:autocomplete => "off", :type => "checkbox"}
@@ -60,7 +59,6 @@
 				= "Sustainability"
 	
 	
-
 = smart_listing_render(:labs)
 
 

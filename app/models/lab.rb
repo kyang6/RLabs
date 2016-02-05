@@ -1,8 +1,5 @@
 class Lab < ActiveRecord::Base
 	
-
-	
-  	
   	has_many :projects
   	accepts_nested_attributes_for :projects, reject_if: :all_blank, allow_destroy: true
 
@@ -11,7 +8,6 @@ class Lab < ActiveRecord::Base
 
   	validates :title, :location, :webpage, :lab_capacity, :director, :req, :suggested, :year, :category, :description, :email, presence: true
   	
-
   	belongs_to :user
 
     #Searches through all the text in title and description

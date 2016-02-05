@@ -2,15 +2,15 @@
   %list.body    
     %table.table.labs.table-hover.clickable-row
       %thead
-        -# Second argument of sortable is sorted attribute name
+        - #Second argument of sortable is sorted attribute name
         %th.col-md-1
         %th.col-md-2= smart_listing.sortable "Title", "title"
         %th.col-md-6= "Brief Description"
         %th.col-md-1= smart_listing.sortable "Open Positions", "lab_capacity"
         %th.col-md-1= "Year"
         
-        
       %tbody
+        - #display the image logos 
         - smart_listing.collection.each do |lab|
           %tr.main{"data-link" => lab_path(lab)}
             %td
@@ -37,24 +37,10 @@
               %td= lab.lab_capacity 
             %td= lab.year
         
-
-      
   = smart_listing.paginate
-  //= smart_listing.pagination_per_page_links
+
 - else
   #warning_labs.col-center
     %h3.text-center 
       Please select a category.
     %img.center(src="/assets/rlabs.png")
-/ .lablist
-/ - unless smart_listing.empty?
-  
-/   .panel-group#accordion
-/     - smart_listing.collection.each do |lab|
-/       %tr
-/         %td= lab.title
-/         %td= lab.email
-/   = smart_listing.paginate
-/   = smart_listing.pagination_per_page_links
-/ - else
-/ %p.alert.alert-info No records!
