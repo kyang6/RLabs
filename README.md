@@ -13,27 +13,16 @@ Accounts for principle investigators (pi) can only be created by an admin. To cr
 
 ## Tech Stack
 Ruby version: ruby 2.0.0p645
-
 Rails version: Rails 4.2.4
-
 Authentication: Devise
-
 Roles: CanCanCan
-
 Admin Panel: RailsAdmin
-
 Listings: smart_listing
-
 Form: simple_form
-
 Embedded form elements: cocoon
-
 Frontend: bootstrap and Haml
-
 Database Development: sqlite
-
 Database Production: pq
-
 Deploy: Heroku
 
 
