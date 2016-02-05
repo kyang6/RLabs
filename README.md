@@ -1,6 +1,4 @@
-== README
-
-# Research Laboratories
+# Research Laboratory Database
 
 ## Developers
 Kevin Yang  |  Email: kyang6@stanford.edu  |  Phone:4803160382  |  GitHub: github.com/kyang6
