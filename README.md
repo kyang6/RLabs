@@ -30,6 +30,7 @@ Deploy: Heroku
 insert image does not save the image file 
 - deleting lab prompts notice twice
 - when pagination is introduced the col is shifted to the right a little bit
+- publications are ordered not by year, but by the order in which the first one of a specific year is created.
 
 ### Improvements
 - custom URL
